@@ -12,9 +12,17 @@ objeto2 = Animal(2024, "Fido", 5, "Pablo", "Chihuahua")
 
 lista = ListaEnlazada()
 
-lista.add(objeto)
-lista.add(objeto2)
+#lista.add(objeto)
+#lista.add(objeto2)
 
+#lista.Imprimir()
+print("Cargando XML ...")
+lista.CargarXML(1)
+
+lista.Imprimir()
+
+print("Editando XML ...")
+lista.editarXML()
 lista.Imprimir()
 
 

@@ -13,4 +13,4 @@ class Animal:
         #print(self.encargado)
         #print(self.raza)
 
-        print(f"Codigo: {self.codigo} Nombre: {self.nombre}")
+        print(f"Codigo: {self.codigo} Nombre: {self.nombre} Edad: {self.edad} Encargado: {self.encargado} Raza: {self.raza}")
