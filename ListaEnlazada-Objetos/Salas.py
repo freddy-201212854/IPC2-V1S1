@@ -12,14 +12,3 @@ for sala in cine.findall("salas/sala"):
     print(f"Numero de sala: {numero.strip()} Asientos: {asientos.strip()}")
 
 
-"""
-print("Ejecutando xml")
-for cines in root.findall('cine'):
-    salas = cines.find('salas')
-    for sala in salas.findall('sala'):
-        numero = sala.find('numero').text
-        asientos = sala.find('asientos').text
-
-        print(f"Numero de sala: {numero} Asientos: {asientos}")
-"""
-

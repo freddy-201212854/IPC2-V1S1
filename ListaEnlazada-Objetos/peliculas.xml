@@ -1,0 +1,55 @@
+<categorias>
+ <categoria>
+ <nombre>Acción</nombre>
+ <peliculas>
+ <pelicula>
+ <titulo>Avengers: Endgame</titulo>
+ <director>Joe Russo, Anthony Russo</director>
+ <anio>2019</anio>
+ <fecha>2023-06-05</fecha>
+ <hora>18:30</hora>
+ </pelicula>
+ <pelicula>
+ <titulo>John Wick</titulo>
+ <director>Chad Stahelski</director>
+ <anio>2014</anio>
+ <fecha>2023-06-06</fecha>
+ <hora>20:00</hora>
+ </pelicula>
+ <pelicula>
+ <titulo>Misión Imposible: Fallout</titulo>
+ <director>Christopher McQuarrie</director>
+ <anio>2018</anio>
+ <fecha>2023-06-07</fecha>
+ <hora>19:15</hora>
+ </pelicula>
+ </peliculas>
+ </categoria>
+7
+ <categoria>
+ <nombre>Comedia</nombre>
+ <peliculas>
+ <pelicula>
+ <titulo>Deadpool</titulo>
+ <director>Tim Miller</director>
+ <anio>2016</anio>
+ <fecha>2023-06-05</fecha>
+ <hora>20:30</hora>
+ </pelicula>
+ <pelicula>
+ <titulo>Superbad</titulo>
+ <director>Greg Mottola</director>
+ <anio>2007</anio>
+ <fecha>2023-06-06</fecha>
+ <hora>21:00</hora>
+ </pelicula>
+ <pelicula>
+ <titulo>Bridesmaids</titulo>
+ <director>Paul Feig</director>
+ <anio>2011</anio>
+ <fecha>2023-06-07</fecha>
+ <hora>20:15</hora>
+ </pelicula>
+ </peliculas>
+ </categoria>
+</categorias>

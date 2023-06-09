@@ -38,7 +38,6 @@ class ListaEnlazada:
             actual.dato.imprimir()
             #print(actual.dato)
 
-
     def CargarXML(self, operacion):
         
         tree = ET.parse('animales.xml')
