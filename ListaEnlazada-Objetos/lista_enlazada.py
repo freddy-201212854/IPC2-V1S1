@@ -71,3 +71,31 @@ class ListaEnlazada:
         self.CargarXML(2)
 
 
+    def nuevo_registroXML(self):
+        tree = ET.parse('animales.xml')
+        root = tree.getroot()
+
+        nueva_persona = ET.Element("persona")
+
+        codigo = ET.SubElement(nueva_persona, 'codigo')
+        codigo.text = '4'
+
+        nombre = ET.SubElement(nueva_persona, 'nombre')
+        nombre.text = "Nuevo dato"
+
+        edad = ET.SubElement(nueva_persona, 'edad')
+        edad.text = '40'
+
+        encargado = ET.SubElement(nueva_persona, 'encargado')
+        encargado.text = 'Sarai'
+
+        raza = ET.SubElement(nueva_persona, 'raza')
+        raza.text = 'Bulldog'
+
+        objeto = Animal(codigo.text, nombre.text, edad.text, encargado.text, raza.text)
+        self.add(objeto)
+
+        root.append(nueva_persona)
+
+        tree.write('animales.xml')
+

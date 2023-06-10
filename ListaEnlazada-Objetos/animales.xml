@@ -20,4 +20,4 @@
     <encargado>Freddy</encargado>
     <raza>Poodle</raza>
   </persona>
-</datos>
+<persona><codigo>4</codigo><nombre>Nuevo dato</nombre><edad>40</edad><encargado>Sarai</encargado><raza>Bulldog</raza></persona><persona><codigo>4</codigo><nombre>Nuevo dato</nombre><edad>40</edad><encargado>Sarai</encargado><raza>Bulldog</raza></persona><persona><codigo>4</codigo><nombre>Nuevo dato</nombre><edad>40</edad><encargado>Sarai</encargado><raza>Bulldog</raza></persona></datos>

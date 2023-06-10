@@ -1,6 +1,7 @@
 from animal import Animal        
 from lista_enlazada import ListaEnlazada
 from listadoble.lista_doble import Lista_Doble
+from listaDCircular.lista_d_circular import listaDobleCircular
 
 objeto = Animal(2023, "Firulais", 5, "Pablo", "Desconocida")
 objeto2 = Animal(2024, "Fido", 5, "Pablo", "Chihuahua")
@@ -37,8 +38,24 @@ lista_doble.CargarXML_LD(1)
 
 lista_doble.Imprimir_LD()
 
+print("----------------------------------")
+print("----------------------------------")
+print("Agregando nuevo registro a XML ...")
+lista.nuevo_registroXML()
 
+lista.Imprimir()
 
+print("----------------------------------")
+print("----------------------------------")
+lista_dobleC = listaDobleCircular()
+
+print("Cargando XML para lista doble circular...")
+lista_dobleC.CargarXML_LDC()
+
+lista_dobleC.Imprimir_LDC()
+
+print("----------------------------------")
+print("----------------------------------")
 
 
 
