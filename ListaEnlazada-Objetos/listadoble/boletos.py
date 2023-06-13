@@ -36,6 +36,9 @@ monto_total = int(n_boleto) * 42
 
 datos_facturacion = input("Desea ingreasar datos de facturacion s/n")
 
+nit = ""
+nombre = ""
+direccion = ""
 if datos_facturacion.lower() == 's' :
     nit = input("Ingrese el NIT")
     nombre = input("Ingrese el nombre")
@@ -45,8 +48,22 @@ if datos_facturacion.lower() == 's' :
     print(f"NIT: {direccion}")
 
 else:
+    nit ="CF"
     print("NIT: CF")
 
 print(f"Monto total a pagar: {monto_total}")
+
+lista_Historial = []
+
+objeto_hist = (id_pelicula, titulo, fecha, hora, n_boleto, n_sala, n_asiento, monto_total, nit, nombre, direccion)
+objeto_hist2 = ("2", titulo, fecha, hora, n_boleto, n_sala, n_asiento, monto_total, nit, nombre, direccion)
+
+lista_Historial.append(objeto_hist)
+lista_Historial.append(objeto_hist2)
+
+for historial in lista_Historial:
+    print(f"{historial[0]} {historial[1]} {historial[2]} {historial[3]} {historial[4]} {historial[5]}")
+   
+
 
 ## por ultimo insertar todos los valores de las variables en un objeto e insertarlo en la lista nativa
