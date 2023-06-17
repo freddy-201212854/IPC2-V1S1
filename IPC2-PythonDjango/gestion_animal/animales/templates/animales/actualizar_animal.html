@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>Actualizar Animal</head>
+    <body>
+        <h1>Actualizar Animal</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="codigo">Código</label>
+            <input type="number" name="codigo" value="{{animal.codigo}}" required>
+            <br>
+            <label for="nomre">nombre</label>
+            <input type="text" name="nombre" value="{{animal.nombre}}" required>
+            <br>
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" value="{{animal.edad}}" required>
+            <br>
+            <label for="encargado">Encargado</label>
+            <input type="text" name="encargado" value="{{animal.encargado}}" required>
+            <br>
+            <label for="raza">Raza</label>
+            <input type="text" name="raza" value="{{animal.raza}}" required>
+            <button type="submit">Actualizar</button>
+        </form>
+    </body>
+</html>

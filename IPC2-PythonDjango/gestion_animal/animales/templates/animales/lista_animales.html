@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gestin Animales</title>
+    </head>
+    <body>
+        <a href="{% url 'crear_animal' %}">Crear Animal</a>
+        <h1>Lista de Animales</h1>
+        <table>
+            <thead>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Encargado</th>
+                <th>Raza</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                {% for animal in animales %}
+                <tr>
+                    <td>{{ animal.codigo }}</td>
+                    <td>{{ animal.nombre }}</td>
+                    <td>{{ animal.edad }}</td>
+                    <td>{{ animal.encargado }}</td>
+                    <td>{{ animal.raza }}</td>
+                    <td>
+                        <a href="{% url 'actualizar_animal' animal.codigo %}">Actualizar</a>
+                        <a href="{% url 'eliminar_animal' animal.codigo %}">Eliminar</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>No existen registros</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
