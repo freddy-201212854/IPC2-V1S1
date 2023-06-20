@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gestin Animales</title>
+        <title>Gestion Animales</title>
     </head>
     <body>
+        <form method="POST" action="{% url 'cargar_xml' %}">
+            {% csrf_token %}
+            <button type="submit">Cargar XML</button>
+        </form>
+       
         <a href="{% url 'crear_animal' %}">Crear Animal</a>
         <h1>Lista de Animales</h1>
         <table>

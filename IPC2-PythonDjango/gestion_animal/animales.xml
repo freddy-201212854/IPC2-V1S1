@@ -1,0 +1,23 @@
+<datos>
+  <persona>
+    <codigo>1</codigo>
+    <nombre>Fido</nombre>
+    <edad>25</edad>
+    <encargado>Mary</encargado>
+    <raza>Labrador</raza>
+  </persona>
+  <persona>
+    <codigo>2</codigo>
+    <nombre>Jon</nombre>
+    <edad>30</edad>
+    <encargado>Mark</encargado>
+    <raza>Poodle</raza>
+  </persona>
+  <persona>
+    <codigo>3</codigo>
+    <nombre>IPC2</nombre>
+    <edad>35</edad>
+    <encargado>Freddy</encargado>
+    <raza>Poodle</raza>
+  </persona>
+</datos>

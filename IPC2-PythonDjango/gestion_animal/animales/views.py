@@ -1,14 +1,19 @@
 from django.shortcuts import redirect, render
+from animales.Clases.lista_enlazada import ListaEnlazada
+
 # Create your views here.
-animales_list = [
-    {'codigo': 1, 'nombre': 'Fido', 'edad': 5, 'encargado': 'IPC2', 'raza': 'Chihuahua'},
-    {'codigo': 2, 'nombre': 'Firulais', 'edad': 6, 'encargado': 'IPC2', 'raza': 'Desconocida'},
-    {'codigo': 3, 'nombre': 'Milo', 'edad': 3, 'encargado': 'IPC2', 'raza': 'Desconocida'},
-]
+global lista
+lista = ListaEnlazada()
 
 
 def lista_animales(request):
-    return render(request, 'animales/lista_animales.html', {'animales': animales_list})
+    return render(request, 'animales/lista_animales.html', {'animales': lista})
+
+def cargar_xml(request):
+    print('entra')
+    if request.method == 'POST':
+        lista.CargarXML(1)
+    return render(request, 'animales/lista_animales.html', {'animales': lista})
 
 def crear_animal(request):   
     if request.method == 'POST':
@@ -19,7 +24,7 @@ def crear_animal(request):
         raza = request.POST.get('raza')
 
         objeto = {'codigo': codigo, 'nombre': nombre, 'edad': edad, 'encargado': encargado, 'raza': raza}
-        animales_list.append(objeto)
+        lista.add(objeto)
 
         return redirect('lista_animales')
     return render(request, 'animales/crear_animal.html')
