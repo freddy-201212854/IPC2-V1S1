@@ -10,7 +10,6 @@ def lista_animales(request):
     return render(request, 'animales/lista_animales.html', {'animales': lista})
 
 def cargar_xml(request):
-    print('entra')
     if request.method == 'POST':
         lista.CargarXML(1)
     return render(request, 'animales/lista_animales.html', {'animales': lista})
