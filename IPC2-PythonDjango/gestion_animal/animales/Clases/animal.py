@@ -1,10 +1,11 @@
 class Animal:
-    def __init__(self, codigo, nombre, edad, encargado, raza):
+    def __init__(self, codigo, nombre, edad, encargado, raza, imagen):
         self.codigo = codigo
         self.nombre = nombre
         self.edad = edad
         self.encargado = encargado
         self.raza = raza
+        self.imagen = imagen    
 
     def imprimir(self):
         #print(self.codigo)

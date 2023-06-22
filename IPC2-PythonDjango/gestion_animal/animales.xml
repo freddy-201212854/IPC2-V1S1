@@ -5,6 +5,7 @@
     <edad>25</edad>
     <encargado>Mary</encargado>
     <raza>Labrador</raza>
+    <imagen>https://w7.pngwing.com/pngs/680/842/png-transparent-mario-bross-thumbnail.png</imagen>
   </persona>
   <persona>
     <codigo>2</codigo>
@@ -12,6 +13,7 @@
     <edad>30</edad>
     <encargado>Mark</encargado>
     <raza>Poodle</raza>
+    <imagen>https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/super-mario-bros.png</imagen>
   </persona>
   <persona>
     <codigo>3</codigo>
@@ -19,5 +21,6 @@
     <edad>35</edad>
     <encargado>Freddy</encargado>
     <raza>Poodle</raza>
+    <imagen>https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/cara-de-mario-bros-png-alta-calidad.png</imagen>
   </persona>
 </datos>

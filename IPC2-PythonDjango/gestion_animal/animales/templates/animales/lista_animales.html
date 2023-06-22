@@ -14,7 +14,7 @@
        
         <a href="{% url 'crear_animal' %}">Crear Animal</a>
         <h1>Lista de Animales</h1>
-        <table class="color-tabla">
+        <table>
             <thead>
                 <th>Codigo</th>
                 <th>Nombre</th>
@@ -22,6 +22,7 @@
                 <th>Encargado</th>
                 <th>Raza</th>
                 <th>Acciones</th>
+                <th>Imagen</th>
             </thead>
             <tbody>
                 {% for animal in animales %}
@@ -31,10 +32,13 @@
                     <td>{{ animal.edad }}</td>
                     <td>{{ animal.encargado }}</td>
                     <td>{{ animal.raza }}</td>
+                    
                     <td>
                         <a href="{% url 'actualizar_animal' animal.codigo %}">Actualizar</a>
                         <a href="{% url 'eliminar_animal' animal.codigo %}">Eliminar</a>
                     </td>
+                    <td>{{ animal.imagen }}</td>
+
                 </tr>
                 {% empty %}
                 <tr>
@@ -43,28 +47,133 @@
                 {% endfor %}
             </tbody>
         </table>
-
         <div class="carousel">
-            <!-- <input type="radio" name="slide" id="slide-1" checked>
-            <input type="radio" name="slide" id="slide-2">
-            <input type="radio" name="slide" id="slide-3"> -->
-            
-            <div class="slides">
-              <div class="slide">
-                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 1">
-              </div>
-              <div class="slide">
-                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 2">
-              </div>
-              <!-- <div class="slide">
-                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 2">
-              </div>
-              <div class="slide">
-                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 2">
-              </div> -->
-            </div>
-            
-                
+            {% for animal in animales %}
+            <img src="{{ animal.imagen }}" alt="Imagen 1" class="active">
+            <!-- <img src="https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/super-mario-bros.png?fit=800%2C800&ssl=1" alt="Imagen 2">
+            <img src="https://w7.pngwing.com/pngs/680/842/png-transparent-mario-bross-thumbnail.png" alt="Imagen 3"> -->
+            {% endfor %}
+
+            <div class="carousel-btn left" onclick="prevImage()">&lt;</div>
+            <div class="carousel-btn right" onclick="nextImage()">&gt;</div>
           </div>
+        
+        <script>
+            var carousel = document.querySelector('.carousel');
+            var images = carousel.querySelectorAll('img');
+            var currentIndex = 0;
+        
+            function showImage(index) {
+              for (var i = 0; i < images.length; i++) {
+                images[i].classList.remove('active');
+              }
+              images[index].classList.add('active');
+            }
+        
+            function prevImage() {
+              currentIndex--;
+              if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+              }
+              showImage(currentIndex);
+            }
+        
+            function nextImage() {
+              currentIndex++;
+              if (currentIndex >= images.length) {
+                currentIndex = 0;
+              }
+              showImage(currentIndex);
+            }
+          </script>
     </body>
 </html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Carrusel con flechas</title>
+  <style>
+    .carousel {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .carousel-btn.left {
+      left: 10px;
+    }
+
+    .carousel-btn.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <img src="https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/cara-de-mario-bros-png-alta-calidad.png?w=800&ssl=1" alt="Imagen 1" class="active">
+    <img src="https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/super-mario-bros.png?fit=800%2C800&ssl=1" alt="Imagen 2">
+    <img src="https://w7.pngwing.com/pngs/680/842/png-transparent-mario-bross-thumbnail.png" alt="Imagen 3">
+    <div class="carousel-btn left" onclick="prevImage()">&lt;</div>
+    <div class="carousel-btn right" onclick="nextImage()">&gt;</div>
+  </div>
+
+  <script>
+    var carousel = document.querySelector('.carousel');
+    var images = carousel.querySelectorAll('img');
+    var currentIndex = 0;
+
+    function showImage(index) {
+      for (var i = 0; i < images.length; i++) {
+        images[i].classList.remove('active');
+      }
+      images[index].classList.add('active');
+    }
+
+    function prevImage() {
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      }
+      showImage(currentIndex);
+    }
+
+    function nextImage() {
+      currentIndex++;
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+      showImage(currentIndex);
+    }
+  </script>
+</body>
+</html> -->

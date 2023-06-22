@@ -1,57 +1,43 @@
 .carousel {
-    position: relative;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .slides {
-    display: flex;
+    height: 400px;
     overflow: hidden;
-    animation: carousel 10s infinite;
-  }
-  
-  .slide {
-    flex: 0 0 100%;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .navigation {
+    position: relative;
+}
+
+  .carousel img {
     position: absolute;
-    bottom: 10px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .navigation label {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .navigation label:hover {
-    background: #999;
-  }
-  
-  input[type="radio"] {
-    display: none;
-  }
-  
-  input[type="radio"]:checked ~ .slides {
-    transform: translateX(-100%);
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease;
   }
 
-  @keyframes carousel {
-    0% { transform: translateX(0); }
-    33.33% { transform: translateX(-100%); }
-    66.66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
+  .carousel img.active {
+    opacity: 1;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+
+  .carousel-btn.left {
+    left: 10px;
+  }
+
+  .carousel-btn.right {
+    right: 10px;
   }
