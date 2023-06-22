@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <title>Gestion Animales</title>
+        <link rel="stylesheet" href="{% static 'css/tabla.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/divCarrusel.css' %}" >
     </head>
     <body>
         <form method="POST" action="{% url 'cargar_xml' %}">
@@ -11,7 +14,7 @@
        
         <a href="{% url 'crear_animal' %}">Crear Animal</a>
         <h1>Lista de Animales</h1>
-        <table>
+        <table class="color-tabla">
             <thead>
                 <th>Codigo</th>
                 <th>Nombre</th>
@@ -40,5 +43,28 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="carousel">
+            <!-- <input type="radio" name="slide" id="slide-1" checked>
+            <input type="radio" name="slide" id="slide-2">
+            <input type="radio" name="slide" id="slide-3"> -->
+            
+            <div class="slides">
+              <div class="slide">
+                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 1">
+              </div>
+              <div class="slide">
+                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 2">
+              </div>
+              <!-- <div class="slide">
+                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 2">
+              </div>
+              <div class="slide">
+                <img src="https://images.wallpapersden.com/image/download/2019-avengers-endgame-movie_a2loaGaUmZqaraWkpJRmbmllrWdoZ2U.jpg" alt="Slide 2">
+              </div> -->
+            </div>
+            
+                
+          </div>
     </body>
 </html>
