@@ -11,6 +11,7 @@ def lista_animales(request):
 
 def cargar_xml(request):
     lista = ListaEnlazada()
+    
     if request.method == 'POST':
         lista.CargarXML(1)
     return render(request, 'animales/lista_animales.html', {'animales': lista})
