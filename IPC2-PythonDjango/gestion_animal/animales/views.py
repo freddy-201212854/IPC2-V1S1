@@ -10,6 +10,8 @@ def lista_animales(request):
     return render(request, 'animales/lista_animales.html', {'animales': lista})
 
 def cargar_xml(request):
+    lista = ListaEnlazada()
+    
     if request.method == 'POST':
         lista.CargarXML(1)
     return render(request, 'animales/lista_animales.html', {'animales': lista})
@@ -21,8 +23,9 @@ def crear_animal(request):
         edad = request.POST.get('edad')
         encargado = request.POST.get('encargado')
         raza = request.POST.get('raza')
+        imagen = request.POST.get('imagen')
 
-        objeto = {'codigo': codigo, 'nombre': nombre, 'edad': edad, 'encargado': encargado, 'raza': raza}
+        objeto = {'codigo': codigo, 'nombre': nombre, 'edad': edad, 'encargado': encargado, 'raza': raza, 'imagen': imagen}
         lista.add(objeto)
 
         return redirect('lista_animales')

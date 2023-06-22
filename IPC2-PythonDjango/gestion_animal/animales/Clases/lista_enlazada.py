@@ -60,8 +60,8 @@ class ListaEnlazada:
             edad = personas.find('edad').text
             encargado = personas.find('encargado').text
             raza = personas.find('raza').text
-
-            objeto = Animal(codigo, nombre, edad, encargado, raza)
+            imagen = personas.find('imagen').text
+            objeto = Animal(codigo, nombre, edad, encargado, raza, imagen)
             
             if operacion == 1: # agregar datos a lista
                 self.add(objeto)
@@ -103,7 +103,10 @@ class ListaEnlazada:
         raza = ET.SubElement(nueva_persona, 'raza')
         raza.text = 'Bulldog'
 
-        objeto = Animal(codigo.text, nombre.text, edad.text, encargado.text, raza.text)
+        imagen = ET.SubElement(nueva_persona, 'imagen')
+        imagen.text = 'image.png'
+
+        objeto = Animal(codigo.text, nombre.text, edad.text, encargado.text, raza.text, imagen.text)
         self.add(objeto)
 
         root.append(nueva_persona)
