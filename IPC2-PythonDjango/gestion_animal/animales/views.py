@@ -5,8 +5,10 @@ from animales.Clases.lista_enlazada import ListaEnlazada
 global lista
 lista = ListaEnlazada()
 
-
+global username
 def lista_animales(request):
+    username = request.session.get('username')
+    print(username)
     return render(request, 'animales/lista_animales.html', {'animales': lista})
 
 def cargar_xml(request):
@@ -47,3 +49,24 @@ def eliminar_animal(request, codigo):
     if animal:
         animales_list.remove(animal)
     return redirect('lista_animales')
+
+def inicio_sesion(request):
+    print (request.session.get('username'))
+    if 'username' in request.session: 
+        return render(request, 'animales/lista_animales.html')
+
+    else:
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+
+            request.session['username'] = username
+                
+            return redirect('lista_animales')
+        return render(request, 'animales/inicio_sesion.html')
+    
+def cerrar_sesion(request):
+    if 'username' in request.session:
+        request.session.pop('username')
+        return redirect('inicio_sesion')
+    return redirect('inicio_sesion')

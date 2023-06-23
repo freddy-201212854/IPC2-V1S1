@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="{% static 'css/divCarrusel.css' %}" >
     </head>
     <body>
+      <h1>Bienvenido, {{ request.session.username }}</h1>
+      <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Cerrar session</button>
+    </form>
         <form method="POST" action="{% url 'cargar_xml' %}">
             {% csrf_token %}
             <button type="submit">Cargar XML</button>
