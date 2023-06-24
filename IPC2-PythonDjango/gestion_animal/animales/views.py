@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from animales.Clases.lista_enlazada import ListaEnlazada
-
+import requests #pip install requests
 # Create your views here.
 global lista
 lista = ListaEnlazada()
@@ -16,6 +16,14 @@ def cargar_xml(request):
     
     if request.method == 'POST':
         lista.CargarXML(1)
+
+        response = requests.get('http://localhost:5007/getAnimales')
+        animales_API = response.json()
+        print(animales_API)
+
+        for animales in animales_API:
+            lista.add(animales)
+
     return render(request, 'animales/lista_animales.html', {'animales': lista})
 
 def crear_animal(request):   
