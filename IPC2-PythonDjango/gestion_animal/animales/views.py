@@ -22,7 +22,20 @@ def cargar_xml(request):
         print(animales_API)
 
         for animales in animales_API:
-            lista.add(animales)
+           lista.add(animales)
+
+        response = requests.get('http://localhost:5007/getPeliculas')
+        peliculas = response.json()
+
+        for categoria in peliculas['categoria']:
+             nombre_categoria = categoria['nombre']
+             print("Categoría", nombre_categoria)
+
+             peliculas = categoria['peliculas']['pelicula']
+             for pelicula in peliculas:
+                 titulo = pelicula['titulo']
+                 print("-------", titulo)
+
 
     return render(request, 'animales/lista_animales.html', {'animales': lista})
 
